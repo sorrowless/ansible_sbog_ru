@@ -1,0 +1,7 @@
+---
+- name: Deploy personal site to target host
+  hosts: sbog_ru_webservers
+  remote_user: root
+
+  roles:
+    - sbog_ru
