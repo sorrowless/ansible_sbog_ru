@@ -12,6 +12,7 @@ Ansible 2.4
 ```yaml
 site_hostname: <site hostname>
 origin_remote: <repo with site content>
+tls_path: /etc/ssl_certs
 ```
 
 #### Dependencies
