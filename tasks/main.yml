@@ -4,20 +4,3 @@
     clone: yes
     dest: "/var/www/{{ site_hostname }}"
     repo: "{{ origin_remote }}"
-  notify:
-    - Restart Nginx
-
-- name: Copy nginx config
-  template:
-    src: nginx.conf
-    dest: "/etc/nginx/sites-available/{{ site_hostname }}.conf"
-  notify:
-    - Restart Nginx
-
-- name: Create nginx symlink
-  file:
-    src: "/etc/nginx/sites-available/{{ site_hostname }}.conf"
-    dest: "/etc/nginx/sites-enabled/{{ site_hostname }}.conf"
-    state: link
-  notify:
-    - Restart Nginx
