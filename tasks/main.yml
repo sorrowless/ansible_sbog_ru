@@ -4,3 +4,11 @@
     clone: yes
     dest: "/var/www/{{ site_hostname }}"
     repo: "{{ origin_remote }}"
+
+- name: Ensure proper permissions on repo directory
+  file:
+    state: directory
+    dest: "/var/www/{{ site_hostname }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    recurse: yes
